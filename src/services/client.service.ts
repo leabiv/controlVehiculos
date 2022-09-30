@@ -49,7 +49,7 @@ export class ClienteService {
   * @returns : QueryResult
   */
   async registrarSalida(idParking: number, dataVehiculo: Vehicle) {
-    const querySocio = await this.pool.query("select s.nombre from parqueadero as p join socio as s on p.id_socio = s.id where p.id_parking = $1", [idParking]);
+    const querySocio = await this.pool.query("select p.id_parking from parqueadero as p join socio as s on p.id_socio = s.id where p.id_parking = $1", [idParking]);
     const queryVehiculo = await this.pool.query("SELECT * FROM vehiculo where id_vehiculo = $1", [dataVehiculo.id_vehiculo]);
 
     if (querySocio.rowCount == 0) {
@@ -57,7 +57,7 @@ export class ClienteService {
     } else if (queryVehiculo.rowCount == 0) {
       throw new Error("No se puede Registrar Salida, no existe el vehiculo");
     }
-    const guardarSalida = await this.pool.query("INSERT INTO registro (id_parking, fechasalida, id_vehiculo) VALUES ($1,(select CURRENT_TIMESTAMP),$2)", [dataVehiculo.id_parking, dataVehiculo.id_vehiculo]);
+    const guardarSalida = await this.pool.query("INSERT INTO registro (id_parking, fechasalida, id_vehiculo) VALUES ($1,(select CURRENT_TIMESTAMP),$2)", [idParking, dataVehiculo.id_vehiculo]);
     return true;
   }
 

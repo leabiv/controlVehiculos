@@ -213,13 +213,12 @@ export class MemberService {
     * @returns : QueryResult
     */
    async verifVehiculosNoPrim() {
-    const query = await this.pool.query(`SELECT v.nombre, v.placa
+    const query = await this.pool.query(`SELECT v.placa, count(v.nombre)
                                               FROM vehiculo as v
                                               join registro as r
                                               on v.id_vehiculo = r.id_vehiculo
                                               where v.id_parking IN (r.id_parking) AND r.fechasalida IS NOT NULL
                                               group by v.placa`);
-    console.log(query.rows)
     return query.rows;
   }
 

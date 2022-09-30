@@ -102,7 +102,7 @@ export class AdminService {
      * @returns : boolean
      */
     async ActualizarParking(idParking: number, dataParking: Parking) {
-        const queryParking = await this.pool.query("SELECT id FROM parqueadero WHERE id_parking = $1", [idParking]);
+        const queryParking = await this.pool.query("SELECT id_parking FROM parqueadero WHERE id_parking = $1", [idParking]);
         if (queryParking.rowCount == 0) {
             throw new Error('Parqueadero no encontrado, no se puedo actualizar')
         }
@@ -155,7 +155,7 @@ export class AdminService {
      * @returns : QueryResult
      */
     async listarVehiculos() {
-        const query = `SELECT v.nombre, v.placa, v.fechaingreso, s.nombre as socio, s.email
+        const query = `SELECT v.nombre, v.placa, v.fechaingreso, p.nombre as parqueadero, s.nombre as socio
                         FROM parqueadero as p
                         JOIN vehiculo as v
                         ON p.id_parking = v.id_parking
@@ -174,7 +174,7 @@ export class AdminService {
      * @returns : QueryResult
      */
     async findOneVehiculos(placa: string) {
-        const query = `SELECT v.nombre as carro, v.fechaingreso, s.nombre, s.email
+        const query = `SELECT v.nombre as carro, v.fechaingreso, p.nombre as parqueadero, s.nombre as socio
                         FROM socio as s
                         JOIN parqueadero as p
                         ON s.id = p.id_socio

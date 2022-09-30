@@ -16,8 +16,10 @@ router.get('/m-parking/usandoPa/:idCliente', TokenValidation, validarRolTokenSoc
 router.get('/m-parking/usandoPa/:idC/vehicle/:placa', TokenValidation, validarRolTokenSocio, member.listarDetalleVehiculo);
 router.get('/m-parking/:id', TokenValidation, validarRolTokenSocio, member.listarRegisVehiculo);
 router.get('/m-parking/:idP/promedio', TokenValidation, validarRolTokenSocio, member.promedioRangoFechas);
+
 router.get('/m-parking/old', TokenValidation, validarRolTokenSocio, member.verifVehiculosNoPrimVez);
 router.get('/m-parking/new', TokenValidation, validarRolTokenSocio, member.verifiVehiParqNuevo);
+
 router.get('/m-parkings/promedio', TokenValidation, validarRolTokenSocio, member.promedioTodosPasqueadero)
 
 export default router;

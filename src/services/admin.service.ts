@@ -154,8 +154,15 @@ export class AdminService {
  * @returns
  */
   async asociarParking(idSocio: number, idParking: Parking) {
+    const query2 = await this.pool.query("SELECT * FROM socio WHERE id = $1",[idSocio]);
+    if(query2.rowCount == 0){
+      throw new Error('El socio no esta registrado')
+    }
     const query = "UPDATE parqueadero SET id_socio = $1 WHERE id_parking = $2 AND id_socio is null";
     const result = await this.pool.query(query, [idSocio, idParking.id_parking]);
+    if(result.rowCount==0){
+      throw new Error('No se pudo asociar aun parqueadero, ya tiene un socio')
+    }
     return true;
   }
 
@@ -296,6 +303,8 @@ export class AdminService {
   }
 
   async enviarCorreoSocios(email: string, placa: string, mensaje: string, idS: number) {
+    // const query = await this.pool.query(`SELECT * FROM cliente`);
+    // query.rows.forEach(item =>item.id)
     const msj = {
       email1: email,
       placa1: placa,

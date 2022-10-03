@@ -19,7 +19,7 @@ router.delete('/parking/:id', TokenValidation, validarRolTokenAdmin, admin.elimi
 router.put('/member/:id', TokenValidation, validarRolTokenAdmin, admin.asociarParqueadero);
 router.get('/vehicle', TokenValidation, validarRolTokenAdmin, admin.listarVehiculos);
 
-router.get('/vehicle/:id', TokenValidation, validarRolTokenAdmin, admin.listarVehiculosParqueaderoDetalles);
+router.get('/parking/:id/details', TokenValidation, validarRolTokenAdmin, admin.listarVehiculosParqueaderoDetalles);
 router.get('/parking/:id/vehicle', TokenValidation, validarRolTokenAdmin, admin.listarVehiculosParqueadero);
 
 router.get('/vehicle/:nombre', TokenValidation, validarRolTokenAdmin, admin.findOneVehiculo);

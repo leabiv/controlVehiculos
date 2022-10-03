@@ -113,6 +113,28 @@ export const listarVehiculos = async (_req: Request, res: Response, next: NextFu
     }
 }
 
+export const listarVehiculosParqueaderoDetalles = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+      const {id} = req.params;
+      const listvehicle = await service.listarVehiculosParqueaderoDetalle(Number(id))
+      res.status(200).json(listvehicle)
+  } catch (error: any) {
+      next(res.status(400).json({ message: error.message }))
+  }
+}
+
+export const listarVehiculosParqueadero = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+      const {id} = req.params;
+      const listvehicle = await service.listarVehiculosParqueadero(Number(id))
+      res.status(200).json(listvehicle)
+  } catch (error: any) {
+      next(res.status(400).json({ message: error.message }))
+  }
+}
+
+
+
 export const findOneVehiculo = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { nombre } = req.params;
@@ -152,4 +174,14 @@ export const listRegiVehiculo = async (req: Request, res: Response, next: NextFu
     } catch (error: any) {
         next(res.status(400).json({ message: error.message }))
     }
+}
+
+export const enviarMensajeSocios = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { email, placa, mensaje, idC } = req.body;
+    const envMensaje = await service.enviarCorreoSocios(email, placa, mensaje, Number(idC));
+    res.status(200).json(envMensaje)
+  } catch (error: any) {
+    next(res.status(400).json({ message: error.message }))
+  }
 }

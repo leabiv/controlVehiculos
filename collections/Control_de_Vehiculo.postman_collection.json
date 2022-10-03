@@ -1,0 +1,1018 @@
+{
+	"info": {
+		"_postman_id": "0878b947-b50b-472b-b8be-08ab736579db",
+		"name": "Control_de_Vehiculo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21727469"
+	},
+	"item": [
+		{
+			"name": "Control_Vehiculo_Admin",
+			"item": [
+				{
+					"name": "GET LISTAR SOCIOS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiYWRtaW5wYXJraW5nIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5VGJHLnVYZGVzZk5zODgxQkhuT2J1dXFmMURhTTVHVWdTMDFMMzdLcWlzYk1NVkNsOXBoZSIsInJvbCI6ImFkbWluIiwiaWQiOjF9XSwiaWF0IjoxNjY0NTY0MzMzLCJleHAiOjE2NjQ1ODIzMzN9.XHaXlvaCgWgpEZh3QLHkqwcU7yQWBJH6JqpF-4kMA8Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST GUARDAR USUARIO SOCIO/CLIENTE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiYWRtaW5wYXJraW5nIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5VGJHLnVYZGVzZk5zODgxQkhuT2J1dXFmMURhTTVHVWdTMDFMMzdLcWlzYk1NVkNsOXBoZSIsInJvbCI6ImFkbWluIiwiaWQiOjF9XSwiaWF0IjoxNjY0NTY0MzMzLCJleHAiOjE2NjQ1ODIzMzN9.XHaXlvaCgWgpEZh3QLHkqwcU7yQWBJH6JqpF-4kMA8Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"cliente5\",\r\n    \"email\": \"cliente5@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"rol\": \"cliente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/app/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST ASOCIAR CLIENTE A SOCIO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiYWRtaW5wYXJraW5nIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5VGJHLnVYZGVzZk5zODgxQkhuT2J1dXFmMURhTTVHVWdTMDFMMzdLcWlzYk1NVkNsOXBoZSIsInJvbCI6ImFkbWluIiwiaWQiOjF9XSwiaWF0IjoxNjY0NTY0MzMzLCJleHAiOjE2NjQ1ODIzMzN9.XHaXlvaCgWgpEZh3QLHkqwcU7yQWBJH6JqpF-4kMA8Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_cliente\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/app/admin/users/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"admin",
+								"users",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LISTAR PARQUEADERO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiYWRtaW5wYXJraW5nIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5VGJHLnVYZGVzZk5zODgxQkhuT2J1dXFmMURhTTVHVWdTMDFMMzdLcWlzYk1NVkNsOXBoZSIsInJvbCI6ImFkbWluIiwiaWQiOjF9XSwiaWF0IjoxNjY0NTY0MzMzLCJleHAiOjE2NjQ1ODIzMzN9.XHaXlvaCgWgpEZh3QLHkqwcU7yQWBJH6JqpF-4kMA8Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/admin/parking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"admin",
+								"parking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST CREAR PARQUEADERO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiYWRtaW5wYXJraW5nIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5VGJHLnVYZGVzZk5zODgxQkhuT2J1dXFmMURhTTVHVWdTMDFMMzdLcWlzYk1NVkNsOXBoZSIsInJvbCI6ImFkbWluIiwiaWQiOjF9XSwiaWF0IjoxNjY0NTY0MzMzLCJleHAiOjE2NjQ1ODIzMzN9.XHaXlvaCgWgpEZh3QLHkqwcU7yQWBJH6JqpF-4kMA8Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"parqueadero2\",\r\n    \"capacidad\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/app/admin/parking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"admin",
+								"parking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT ACTUALIZAR PARQUEADERO",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiYWRtaW5wYXJraW5nIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5VGJHLnVYZGVzZk5zODgxQkhuT2J1dXFmMURhTTVHVWdTMDFMMzdLcWlzYk1NVkNsOXBoZSIsInJvbCI6ImFkbWluIiwiaWQiOjF9XSwiaWF0IjoxNjY0NTY0MzMzLCJleHAiOjE2NjQ1ODIzMzN9.XHaXlvaCgWgpEZh3QLHkqwcU7yQWBJH6JqpF-4kMA8Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"parqueadero3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/app/admin/parking/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"admin",
+								"parking",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BUSCAR PARQUEADERO POR ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiYWRtaW5wYXJraW5nIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5VGJHLnVYZGVzZk5zODgxQkhuT2J1dXFmMURhTTVHVWdTMDFMMzdLcWlzYk1NVkNsOXBoZSIsInJvbCI6ImFkbWluIiwiaWQiOjF9XSwiaWF0IjoxNjY0NTY0MzMzLCJleHAiOjE2NjQ1ODIzMzN9.XHaXlvaCgWgpEZh3QLHkqwcU7yQWBJH6JqpF-4kMA8Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/admin/parking/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"admin",
+								"parking",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT ASOCIAR SOCIO A PARQUEADERO POR ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiYWRtaW5wYXJraW5nIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5VGJHLnVYZGVzZk5zODgxQkhuT2J1dXFmMURhTTVHVWdTMDFMMzdLcWlzYk1NVkNsOXBoZSIsInJvbCI6ImFkbWluIiwiaWQiOjF9XSwiaWF0IjoxNjY0NTY0MzMzLCJleHAiOjE2NjQ1ODIzMzN9.XHaXlvaCgWgpEZh3QLHkqwcU7yQWBJH6JqpF-4kMA8Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_parking\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/app/admin/member/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"admin",
+								"member",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LISTAR VEHICULOS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiYWRtaW5wYXJraW5nIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5VGJHLnVYZGVzZk5zODgxQkhuT2J1dXFmMURhTTVHVWdTMDFMMzdLcWlzYk1NVkNsOXBoZSIsInJvbCI6ImFkbWluIiwiaWQiOjF9XSwiaWF0IjoxNjY0NTY0MzMzLCJleHAiOjE2NjQ1ODIzMzN9.XHaXlvaCgWgpEZh3QLHkqwcU7yQWBJH6JqpF-4kMA8Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/admin/vehicle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"admin",
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BUSCAR UN VEHICULO POR PLACA",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiYWRtaW5wYXJraW5nIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5VGJHLnVYZGVzZk5zODgxQkhuT2J1dXFmMURhTTVHVWdTMDFMMzdLcWlzYk1NVkNsOXBoZSIsInJvbCI6ImFkbWluIiwiaWQiOjF9XSwiaWF0IjoxNjY0NTY0MzMzLCJleHAiOjE2NjQ1ODIzMzN9.XHaXlvaCgWgpEZh3QLHkqwcU7yQWBJH6JqpF-4kMA8Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/admin/vehicle/algo2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"admin",
+								"vehicle",
+								"algo2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CUANTOS CLIENTES EXISTEN POR SOCIO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiYWRtaW5wYXJraW5nIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5VGJHLnVYZGVzZk5zODgxQkhuT2J1dXFmMURhTTVHVWdTMDFMMzdLcWlzYk1NVkNsOXBoZSIsInJvbCI6ImFkbWluIiwiaWQiOjF9XSwiaWF0IjoxNjY0NTY0MzMzLCJleHAiOjE2NjQ1ODIzMzN9.XHaXlvaCgWgpEZh3QLHkqwcU7yQWBJH6JqpF-4kMA8Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/admin/member/2/client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"admin",
+								"member",
+								"2",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET listado del historial de vehículos por un parqueadero",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiYWRtaW5wYXJraW5nIiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCR5VGJHLnVYZGVzZk5zODgxQkhuT2J1dXFmMURhTTVHVWdTMDFMMzdLcWlzYk1NVkNsOXBoZSIsInJvbCI6ImFkbWluIiwiaWQiOjF9XSwiaWF0IjoxNjY0NTY0MzMzLCJleHAiOjE2NjQ1ODIzMzN9.XHaXlvaCgWgpEZh3QLHkqwcU7yQWBJH6JqpF-4kMA8Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"placa\": \"a\",\r\n    \"fechaingreso\": \"2022-09-30\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/app/admin/parking/register/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"admin",
+								"parking",
+								"register",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Control_vehicle_Socio",
+			"item": [
+				{
+					"name": "POST CREAR CLIENTE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU0NDI1MCwiZXhwIjoxNjY0NTYyMjUwfQ.eGS_F0va6hxf1rj_7V99vCeoa0g9rlrZRQt3sGeEgbc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"cliente2\",\r\n    \"email\": \"cliente2@gmail.com\",\r\n    \"password\": \"12345\",\r\n    \"rol\": \"cliente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/app/member/m-client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"member",
+								"m-client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST ASOCIAR CLIENTE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU0NDI1MCwiZXhwIjoxNjY0NTYyMjUwfQ.eGS_F0va6hxf1rj_7V99vCeoa0g9rlrZRQt3sGeEgbc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_cliente\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/app/member/3/m-client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"member",
+								"3",
+								"m-client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LISTAR PARQUEADERO POR ID_SOCIO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU3Mjk5MSwiZXhwIjoxNjY0NTkwOTkxfQ.TemJ_tiMNQBdQDtB3IITToB78GrxjEjXkDKEPijZNmM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/member/m-vehicles/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"member",
+								"m-vehicles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET  DETALLE DEL VEHICULO EN SU PARQUEADERO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU3Mjk5MSwiZXhwIjoxNjY0NTkwOTkxfQ.TemJ_tiMNQBdQDtB3IITToB78GrxjEjXkDKEPijZNmM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/member/m-vehicles/algo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"member",
+								"m-vehicles",
+								"algo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET vehiculos no son primera vez",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU2ODIwOSwiZXhwIjoxNjY0NTg2MjA5fQ.I3ONk36DUT_kkoYtcUICEITiyH9kwYzLWTl9TW3RT2A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/member/m-parking/old",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"member",
+								"m-parking",
+								"old"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET cuantos clientes han usado el parqueadero",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU3Mjk5MSwiZXhwIjoxNjY0NTkwOTkxfQ.TemJ_tiMNQBdQDtB3IITToB78GrxjEjXkDKEPijZNmM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/member/m-parking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"member",
+								"m-parking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET cuantos clientes no han usado el parqueadero",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU3Mjk5MSwiZXhwIjoxNjY0NTkwOTkxfQ.TemJ_tiMNQBdQDtB3IITToB78GrxjEjXkDKEPijZNmM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/member/m-parking/usandoPa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"member",
+								"m-parking",
+								"usandoPa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET listar vehiculos por cliente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU3Mjk5MSwiZXhwIjoxNjY0NTkwOTkxfQ.TemJ_tiMNQBdQDtB3IITToB78GrxjEjXkDKEPijZNmM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/member/m-parking/usandoPa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"member",
+								"m-parking",
+								"usandoPa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET detalle del vehiculo por cliente",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU3Mjk5MSwiZXhwIjoxNjY0NTkwOTkxfQ.TemJ_tiMNQBdQDtB3IITToB78GrxjEjXkDKEPijZNmM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/member/m-parking/usandoPa/1/vehicle/algo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"member",
+								"m-parking",
+								"usandoPa",
+								"1",
+								"vehicle",
+								"algo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET   10 vehículos que se han registrado en el parqueadero",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU3Mjk5MSwiZXhwIjoxNjY0NTkwOTkxfQ.TemJ_tiMNQBdQDtB3IITToB78GrxjEjXkDKEPijZNmM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/member/m-parking/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"member",
+								"m-parking",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET obtener el promedio de un parqueadero por rango de fecha",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU2ODIwOSwiZXhwIjoxNjY0NTg2MjA5fQ.I3ONk36DUT_kkoYtcUICEITiyH9kwYzLWTl9TW3RT2A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fecha_salida\": \"2022-10-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/app/member/m-parking/2/promedio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"member",
+								"m-parking",
+								"2",
+								"promedio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET promedio de uso de todos los parqueaderos por un rango de fecha",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU2ODIwOSwiZXhwIjoxNjY0NTg2MjA5fQ.I3ONk36DUT_kkoYtcUICEITiyH9kwYzLWTl9TW3RT2A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fechafinal\": \"2022-10-02\",\r\n    \"fechainicio\": \"2022-09-29\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/app/member/m-parkings/promedio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"member",
+								"m-parkings",
+								"promedio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET verificar cuales son nuevos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU2ODIwOSwiZXhwIjoxNjY0NTg2MjA5fQ.I3ONk36DUT_kkoYtcUICEITiyH9kwYzLWTl9TW3RT2A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/member/m-parking/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"member",
+								"m-parking",
+								"new"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Control_Vehicle_login",
+			"item": [
+				{
+					"name": "POST REGISTRO USUARIO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"socio2@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"rol\": \"socio\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/app/login/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"login",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET VALIDACION PERFIL",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoic29jaW8yIiwiZW1haWwiOiJzb2NpbzJAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkM08uQjhpU3NMdEVVSW1tV1YuNUdwLkhyV1cyMUVFSGtCemJLQlhNVTM3RTRPcEVxRERaUi4iLCJyb2wiOiJzb2NpbyIsImlkIjoyfV0sImlhdCI6MTY2NDU0NDI1MCwiZXhwIjoxNjY0NTYyMjUwfQ.eGS_F0va6hxf1rj_7V99vCeoa0g9rlrZRQt3sGeEgbc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/login/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"login",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Control_vehicle_Cliente",
+			"item": [
+				{
+					"name": "POST registrar entrada del vehiculo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiY2xpZW50ZTIiLCJlbWFpbCI6ImNsaWVudGUyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFBsZUh2VHpwcjVBRGpyLld2dGV0UE9XczJ6eWdlQmExYzUzVHk1UTd2Z1VSWDg2R0JINmJlIiwicm9sIjoiY2xpZW50ZSIsImlkIjozfV0sImlhdCI6MTY2NDU3MzU0MywiZXhwIjoxNjY0NTkxNTQzfQ.wDVOYWs4n9nujPzwK8Xt6pWINITrm7Q6LFJ7uv1AfaY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_parking\": 3,\r\n    \"nombre\": \"HONDA\",\r\n    \"placa\": \"DDD-09\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/app/client/c-paking/member/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"client",
+								"c-paking",
+								"member",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET listar los vehiculos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiY2xpZW50ZTIiLCJlbWFpbCI6ImNsaWVudGUyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFBsZUh2VHpwcjVBRGpyLld2dGV0UE9XczJ6eWdlQmExYzUzVHk1UTd2Z1VSWDg2R0JINmJlIiwicm9sIjoiY2xpZW50ZSIsImlkIjozfV0sImlhdCI6MTY2NDU3MzU0MywiZXhwIjoxNjY0NTkxNTQzfQ.wDVOYWs4n9nujPzwK8Xt6pWINITrm7Q6LFJ7uv1AfaY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/client/c-vehicle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"client",
+								"c-vehicle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET listar vehiculos por parqueadero",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiY2xpZW50ZTIiLCJlbWFpbCI6ImNsaWVudGUyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFBsZUh2VHpwcjVBRGpyLld2dGV0UE9XczJ6eWdlQmExYzUzVHk1UTd2Z1VSWDg2R0JINmJlIiwicm9sIjoiY2xpZW50ZSIsImlkIjozfV0sImlhdCI6MTY2NDU3MzU0MywiZXhwIjoxNjY0NTkxNTQzfQ.wDVOYWs4n9nujPzwK8Xt6pWINITrm7Q6LFJ7uv1AfaY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4200/app/client/c-vehicle/parking/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"client",
+								"c-vehicle",
+								"parking",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST registrar la salida del vehiculo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaW5kVXNlciI6W3sibm9tYnJlIjoiY2xpZW50ZTIiLCJlbWFpbCI6ImNsaWVudGUyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFBsZUh2VHpwcjVBRGpyLld2dGV0UE9XczJ6eWdlQmExYzUzVHk1UTd2Z1VSWDg2R0JINmJlIiwicm9sIjoiY2xpZW50ZSIsImlkIjozfV0sImlhdCI6MTY2NDU3MzU0MywiZXhwIjoxNjY0NTkxNTQzfQ.wDVOYWs4n9nujPzwK8Xt6pWINITrm7Q6LFJ7uv1AfaY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_vehiculo\": 9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4200/app/client/c-paking/3/vehicle",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4200",
+							"path": [
+								"app",
+								"client",
+								"c-paking",
+								"3",
+								"vehicle"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -15,7 +15,7 @@ export const signin = async (req: Request, res: Response, next: NextFunction) =>
             res.status(400).json({ message: "Contraseña Incorrecta" })
         }
 
-        const token: string = jwt.sign({ findUser }, process.env.TOKEN_SECRET || 'tokentest', { expiresIn: '5h' })
+        const token: string = jwt.sign({ findUser }, process.env.TOKEN_SECRET || 'tokentest', { expiresIn: '6h' })
         //res.header('auth-token', token).json(findUser)
         res.json({token})
     } catch (error: any) {

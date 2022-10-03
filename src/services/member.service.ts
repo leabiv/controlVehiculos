@@ -16,16 +16,7 @@ export class MemberService {
     this.socios = [];
     this.clientes = [];
     this.registro = [];
-    this.pool = pool
-    //this.generate();
-  }
-
-  async generate() {
-    const hash = await encryptPassword('admin');
-    const result1 = await this.pool.query(`INSERT INTO administrador
-                                            (nombre, email, password, rol)
-                                            VALUES ('adminparking','admin@gmail.com',$1,'admin')`,
-      [hash]);
+    this.pool = pool;
   }
 
   /**
@@ -74,6 +65,46 @@ export class MemberService {
                                                 join vehiculo as v
                                                 on p.id_parking = v.id_parking
                                                 where s.id = $1`, [idSocio]);
+    if (result1.rowCount == 0) {
+      throw new Error('Error con el listado de parqueadero del socio')
+    }
+    return result1.rows;
+  }
+
+  /**
+ * Funcion que permite listar Parqueadero por el socio
+ * @param idSocio : number id socio
+ * @returns :QueryResult listado de parqueadero
+ */
+  async listarVehicuParqueaderos(idSocio: number, idParking: number) {
+    const result1 = await this.pool.query(`select v.nombre, v.placa
+                                              from socio as s
+                                              join parqueadero as p
+                                              on p.id_socio = s.id
+                                              join vehiculo as v
+                                              on v.id_parking = p.id_parking
+                                              where p.id_socio = $1 and p.id_parking = $2`, [idSocio, idParking]);
+    if (result1.rowCount == 0) {
+      throw new Error('Error con el listado de parqueadero del socio')
+    }
+    return result1.rows;
+  }
+
+  /**
+  * Funcion que permite listar Parqueadero por el socio
+  * @param idSocio : number id socio
+  * @returns :QueryResult listado de parqueadero
+  */
+  async listarVehicuDetalParqueaderos(idSocio: number, idParking: number) {
+    const result1 = await this.pool.query(`select v.nombre, v.placa, v.fechaingreso, c.nombre as cliente
+                                                  from socio as s
+                                                  join parqueadero as p
+                                                  on p.id_socio = s.id
+                                                  join vehiculo as v
+                                                  on v.id_parking = p.id_parking
+                                                  join cliente as c
+                                                  on v.id_cliente = c.id
+                                                  where p.id_socio = $1 and p.id_parking = $2`, [idSocio, idParking]);
     if (result1.rowCount == 0) {
       throw new Error('Error con el listado de parqueadero del socio')
     }
@@ -203,23 +234,24 @@ export class MemberService {
                                           FROM registro as r
                                           JOIN vehiculo as v
                                           ON r.id_parking = v.id_parking)) promedio
-                                          FROM vehiculo`,[fechas.fechafinal, fechas.fechainicio]);
+                                          FROM vehiculo`, [fechas.fechafinal, fechas.fechainicio]);
     return query.rows;
   }
 
-   //----------------------------------------------------------------------------//
+  //----------------------------------------------------------------------------//
   /**
     * funcion que permite verificar vehiculos no son primera vez
     * @returns : QueryResult
     */
-   async verifVehiculosNoPrim() {
-    const query = await this.pool.query(`SELECT v.placa, count(v.nombre)
+  async verifVehiculosNoPrim() {
+    //const query2 = await this.pool.query('Select * from vehiculo')
+    const query2 = await this.pool.query(`SELECT v.placa, count(v.nombre)
                                               FROM vehiculo as v
                                               join registro as r
                                               on v.id_vehiculo = r.id_vehiculo
                                               where v.id_parking IN (r.id_parking) AND r.fechasalida IS NOT NULL
                                               group by v.placa`);
-    return query.rows;
+    return query2.rows;
   }
 
   /**
@@ -236,5 +268,13 @@ export class MemberService {
     return result.rows;
   }
 
+  async enviarCorreoCliente(email: string, placa: string, mensaje: string, idC: number) {
+    const msj = {
+      email1: email,
+      placa1: placa,
+      mensaje1: mensaje
+    }
+    return msj;
+  }
 
 }

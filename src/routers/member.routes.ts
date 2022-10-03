@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { TokenValidation, validarRolTokenSocio} from '../lib/verifyToken';
+import { TokenValidation, validarRolTokenSocio } from '../lib/verifyToken';
 import * as member from '../controllers/member.controlles';
 
 const router = Router();
@@ -8,6 +8,9 @@ router.post('/m-client', TokenValidation, validarRolTokenSocio, member.crearClie
 router.post('/:id/m-client', member.asociarCliente);
 
 router.get('/m-vehicles', TokenValidation, validarRolTokenSocio, member.listarParqueaderos);
+router.get('/m-parking/:idP/m-vehicles', TokenValidation, validarRolTokenSocio, member.listarVehiculoParqueadero);
+router.get('/m-parking/:idP/m-vehicles/detail', TokenValidation, validarRolTokenSocio, member.listarDetVehiculoParqueadero);
+
 router.get('/m-vehicles/:placa', TokenValidation, validarRolTokenSocio, member.detalleParqueaderos);
 
 router.get('/m-parking', TokenValidation, validarRolTokenSocio, member.usandoParqueadero);
@@ -21,5 +24,7 @@ router.get('/m-parking/old', TokenValidation, validarRolTokenSocio, member.verif
 router.get('/m-parking/new', TokenValidation, validarRolTokenSocio, member.verifiVehiParqNuevo);
 
 router.get('/m-parkings/promedio', TokenValidation, validarRolTokenSocio, member.promedioTodosPasqueadero)
+
+router.post('/mensaje', TokenValidation, validarRolTokenSocio, member.enviarMensajeClientes);
 
 export default router;

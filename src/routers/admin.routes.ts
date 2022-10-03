@@ -18,11 +18,17 @@ router.delete('/parking/:id', TokenValidation, validarRolTokenAdmin, admin.elimi
 // /*endpoint*/
 router.put('/member/:id', TokenValidation, validarRolTokenAdmin, admin.asociarParqueadero);
 router.get('/vehicle', TokenValidation, validarRolTokenAdmin, admin.listarVehiculos);
+
+router.get('/vehicle/:id', TokenValidation, validarRolTokenAdmin, admin.listarVehiculosParqueaderoDetalles);
+router.get('/parking/:id/vehicle', TokenValidation, validarRolTokenAdmin, admin.listarVehiculosParqueadero);
+
 router.get('/vehicle/:nombre', TokenValidation, validarRolTokenAdmin, admin.findOneVehiculo);
 router.get('/vehicle/member/:id', TokenValidation, validarRolTokenAdmin, admin.findVehiculoSocio);
 
 // /*endpoint*/
 router.get('/member/:id/client', TokenValidation, validarRolTokenAdmin, admin.findclienteExiSocio);
 router.get('/parking/register/:id', TokenValidation, validarRolTokenAdmin, admin.listRegiVehiculo);
+
+router.post('/mensaje', TokenValidation, validarRolTokenAdmin, admin.enviarMensajeSocios);
 
 export default router;
